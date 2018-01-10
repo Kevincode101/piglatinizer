@@ -7,7 +7,28 @@
 // Document Ready Function. All of your jQuery should go in here. 
 $( document ).ready(function() {
   
-
+$(document).ready(function() {
+   $("button").click(function() {
+     var userInput = $("input").val();
+     console.log("user input is "+ userInput);
+     var pigLatin = pigLatinizer(userInput); 
+      console.log("piglatin is "+ pigLatin);
+      $("div").html(pigLatin);
+     
+   });
+});
+  function pigLatinizer(word) {
+    var vowels =["a","e","i","o","u"];
+    var firstLetter = word[0];
+    var indexOf = vowels.indexOf(firstLetter);
+    console.log("index of "+ indexOf);
+    var beginsWithVowel =  indexOf > -1;
+     if(beginsWithVowel){ 
+       return word + "yay";  
+     } else {  
+       return word + "ay";  
+     }            
+}
 
 
 });
